@@ -1,4 +1,5 @@
 @import "bootstrap";
+$lightGray: #999;
 
 /* universal */
 
@@ -45,7 +46,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: $lightGray;
 }
 
 p {
@@ -78,7 +79,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: $lightGray;
   a { 
     color: #555;
     &:hover {
