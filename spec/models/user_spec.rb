@@ -13,7 +13,7 @@ require 'spec_helper'
 
 describe User do
   before do 
- @user = User.new(name: "Example User", email: "user@example.com") 
+ @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
 end
 
   subject { @user }
@@ -65,4 +65,16 @@ end
      end
      it { should_not be_valid } 
  end
+  describe "when password is not present" do
+  before { @user.password = @user.password_confirmation = " " }
+    it { should_not be_valid }
+ end
+  describe "when password doesn't match validation" do
+  before { @user.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+ end
+  describe "when password confirmation is nil" do
+  before { @user.password_confirmation = nil }
+    it { should_not be_valid }
+end
 end
